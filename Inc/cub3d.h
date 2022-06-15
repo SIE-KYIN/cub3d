@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yson <yson@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 18:08:52 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/06/15 14:53:04 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/15 17:00:16 by kyujlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@
 # define WIDTH 880
 # define WALL_WIDTH 64
 # define WALL_HEIGHT 64
+# define NORTH_RADIANS 0
+# define SOUTH_RADIANS 3.14159265358979323846
+# define EAST_RADIANS  4.71238898038468967399
+# define WEST_RADIANS  1.57079632679489661923 
+
 
 enum e_event_index
 {
@@ -147,7 +152,7 @@ typedef enum e_type
 ** init_game.c --- initializing the struct 'game' except view
 */
 void	init_key_state(t_key *key);
-void	init_player(t_player *player);
+void    init_player(t_game *game, t_player *player);
 void	init_map_info(void *mlx_ptr, t_map_info *map, void *win_ptr);
 
 /*

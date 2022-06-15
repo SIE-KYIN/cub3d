@@ -6,7 +6,7 @@
 /*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:58:19 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/06/15 14:42:44 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/15 16:58:58 by kyujlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,24 @@ void    init_wall_index(t_game *game, t_dda_draw *dd, t_dda_calc *dc)
     if (dc->side == 0)
     {
         dd->wall_x = game->player.pos.y + dc->per_dist * dc->ray_dir.y;
-        dd->wall_index = 1;//west
+        dd->wall_index = 0;
     }
     else
     {
         dd->wall_x = game->player.pos.x + dc->per_dist * dc->ray_dir.x;
-        dd->wall_index = 0;//north
+        dd->wall_index = 1;
     }
     dd->wall_x -= floor(dd->wall_x);
     dd->tex.x = (int)(dd->wall_x * (double)WALL_WIDTH);
     if (dc->side == 0 && dc->ray_dir.x > 0)
     {
         dd->tex.x = WALL_WIDTH - dd->tex.x - 1;
-        dd->wall_index = 2;
+        dd->wall_index = 3;
     }
     if (dc->side == 1 && dc->ray_dir.y < 0)
     {
         dd->tex.x = WALL_WIDTH - dd->tex.x - 1;
-        dd->wall_index = 3;
+        dd->wall_index = 2;
     }
 }
 
