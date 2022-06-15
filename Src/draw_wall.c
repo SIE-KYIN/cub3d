@@ -6,7 +6,7 @@
 /*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:29:18 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/05/27 17:31:36 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/15 14:41:57 by kyujlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	worldMap[24][24] = {
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -72,7 +72,7 @@ void	init_view(t_game *game, int x)
 	t_dda_calc *v;
 
 	v = &game->dda_calc;
-	v->camera_x = (2 * x / (double)width) - 1;
+	v->camera_x = (2 * x / (double)WIDTH) - 1;
 	v->ray_dir.x = game->player.dir.x + game->player.plane.x * v->camera_x;
 	v->ray_dir.y = game->player.dir.y + game->player.plane.y * v->camera_x;
 	v->map.x = (int)game->player.pos.x;
@@ -118,7 +118,7 @@ void	draw_wall(t_game *game, t_img_info *img)
 	int		x;
 
 	x = -1;
-	while (++x < width)
+	while (++x < WIDTH)
 	{
 		init_view(game, x);
 		dda(game);

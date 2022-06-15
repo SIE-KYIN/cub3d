@@ -6,7 +6,7 @@
 /*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:23:49 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/05/30 18:26:22 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/15 14:43:06 by kyujlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void    init_player(t_player *player)
 	player->rot_speed = 0.1;
 }
 
-
 void init_map_info(void *mlx_ptr, t_map_info *map, void *win_ptr)
 {   
     int rgb[2][3] = { {110,153,15}, {255,255,255} };
@@ -47,8 +46,8 @@ void init_map_info(void *mlx_ptr, t_map_info *map, void *win_ptr)
     map->path[2] = "./asset/west.xpm";
     map->path[3] = "./asset/south.xpm";
     
-    map->img[0] = load_img(mlx_ptr, wall_width, wall_height, map->path[0],win_ptr);
-    map->img[1] = load_img(mlx_ptr, wall_width, wall_height, map->path[1],win_ptr);
-    map->img[2] = load_img(mlx_ptr, wall_width, wall_height, map->path[2],win_ptr);
-    map->img[3] = load_img(mlx_ptr, wall_width, wall_height, map->path[3],win_ptr);
+    map->img[0] = load_img(mlx_ptr, WALL_WIDTH, WALL_HEIGHT, map->path[0],win_ptr);
+    map->img[1] = load_img(mlx_ptr, WALL_WIDTH, WALL_HEIGHT, map->path[1],win_ptr);
+    map->img[2] = load_img(mlx_ptr, WALL_WIDTH, WALL_HEIGHT, map->path[2],win_ptr);
+    map->img[3] = load_img(mlx_ptr, WALL_WIDTH, WALL_HEIGHT, map->path[3],win_ptr);
 }
