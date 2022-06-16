@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yson <yson@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 18:08:52 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/06/15 18:59:44 by yson             ###   ########.fr       */
+/*   Updated: 2022/06/16 17:47:46 by kyujlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 # define WIDTH 880
 # define WALL_WIDTH 64
 # define WALL_HEIGHT 64
-# define NORTH_RADIANS 0
-# define SOUTH_RADIANS 3.14159265358979323846
-# define EAST_RADIANS  4.71238898038468967399
-# define WEST_RADIANS  1.57079632679489661923 
+# define NORTH_RADIANS 0.01
+# define SOUTH_RADIANS 3.14
+# define EAST_RADIANS  4.71
+# define WEST_RADIANS  1.58
 
 
 enum e_event_index
