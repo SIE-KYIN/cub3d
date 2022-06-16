@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: yson <yson@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 18:08:52 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/06/16 17:47:46 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/16 18:10:14 by yson             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@
 # define SOUTH_RADIANS 3.14
 # define EAST_RADIANS  4.71
 # define WEST_RADIANS  1.58
-
 
 enum e_event_index
 {
@@ -196,6 +195,7 @@ int	ft_strcmp(char *s1, char *s2);
 void	free_split(char **split);
 int	ft_atoi_ad(const char *str);
 char	**lst_to_arr(t_game *game, t_list *head);
+int	count_arr(char **str);
 
 /*
 ** init.c --- related to init_info
@@ -208,6 +208,7 @@ double	camera_flag(char c);
 */
 void read_map(t_game *game);
 int	arg_check(int argc, char **argv, t_map_info *info);
+void	remove_space(char **str, t_type type);
 
 /*
 ** check_map.c --- check map
@@ -217,7 +218,18 @@ void	check_map(t_game *game);
 /*
 ** convert_map.c --- convert map
 */
-void	convert_map(t_game *game);
+void	convert_map(t_game *game, int i, int j);
+
+/*
+** read_utils.c --- util functions when read map
+*/
+int	map_valid_check(char *str);
+int	map_info_check(t_map_info *info);
+
+/*
+** source_check.c --- function checking sources
+*/
+void	handle_source(t_game *game, char *str, t_type type);
 
 //테스트용 함수
 void split_print(t_game *game, char **split);

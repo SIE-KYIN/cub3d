@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moving.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyujlee <kyujlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: yson <yson@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:30:28 by kyujlee           #+#    #+#             */
-/*   Updated: 2022/06/16 17:42:33 by kyujlee          ###   ########.fr       */
+/*   Updated: 2022/06/16 18:16:21 by yson             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,3 @@ void    moving(t_game *game)
     if (game->map.world_map[(int)(game->player.pos.x)][(int)(dest.y)] != 1)
         game->player.pos.y = dest.y;
 }
-
